@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- To enable media quries, this is obligatory -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Media Queries</title>
+    <style>
+        /* == Desktop first approach */
+        #box{
+            width: 350px;
+            height: 350px;
+            background-color: yellow;
+        }
+
+        /* == Media Queries */
+        @media all and (min-width: 992px) and (max-width: 1199px){
+            h1{
+                color: red;
+            }
+
+            #box{
+                background-color: red;
+            }
+        }
+
+        @media all and (min-width: 768px) and (max-width: 991px){
+            h1{
+                color: green;
+            }
+
+            #box{
+                background-color: green;
+            }
+        }
+
+        @media all and (max-width: 767px){
+            h1{
+                color: blue;
+            }
+
+            #box{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3 Media Queries</h1>
+    <a href="tel: +94772048857">Call me</a>
+    <div id="box"></div>
+</body>
+</html>
