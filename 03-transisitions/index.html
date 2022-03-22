@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS3 Transisitions</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        h1{
+        h1 {
             color: red;
             transition-property: color;
             transition-duration: 2s;
             transition-timing-function: ease-in-out;
         }
 
-        h1:hover{
+        h1:hover {
             color: blue;
         }
 
-        .box{
+        .box {
             float: left;
             margin: 10px;
             width: 250px;
@@ -28,14 +28,14 @@
             position: relative;
             overflow: hidden;
             background-size: cover;
-            background-repeat: no-repeat;            
+            background-repeat: no-repeat;
         }
 
-        .box:hover::after{
+        .box:hover::after {
             top: 0;
         }
 
-        .box::after{
+        .box::after {
             content: "";
             display: block;
             position: absolute;
@@ -50,21 +50,20 @@
             transition-timing-function: ease-out;
         }
 
-        #box1{
+        #box1 {
             background-image: url('image/1.jpg');
         }
 
-        #box2{
+        #box2 {
             background-image: url('image/2.png');
         }
 
-        #box3{
+        #box3 {
             background-image: url('image/3.jpg');
         }
 
-        #btn-call{
+        #btn-call {
             position: relative;
-            background-color:rgb(0 173 255 / 87%);
             width: 84px;
             height: 84px;
             position: fixed;
@@ -75,16 +74,55 @@
             cursor: pointer;
         }
 
-        #icon-call{
+        #btn-call::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(136deg, #2196f3, #ffffffa1);
+            background-color: rgb(0 173 255 / 87%);
+            border-radius: 100%;
+            z-index: 0;
+        }
+
+        #btn-call::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 255, 21);
+            opacity: 0.2;
+            border-radius: 100%;
+            z-index: -1;
+            transition-property: transform;
+            transition-duration: 450ms;
+            transition-timing-function: cubic-bezier(0.42, 0, 0, 2.04);
+        }
+
+        #btn-call:hover::after{
+            transform: scale(1.5);
+        }
+
+        #btn-call:hover #icon-call{
+            transform: translate(-50%, -50%) rotate(265deg);
+        }
+
+        #icon-call {
             position: absolute;
             font-size: 3.2rem;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%) rotateY(180deg);
+            transform: translate(-50%, -50%) rotate(250deg);
             color: white;
+            transition: transform 250ms ease-in-out;
         }
     </style>
 </head>
+
 <body>
     <h1>CSS3 Transisitions</h1>
     <div id="wrapper">
@@ -96,4 +134,5 @@
         <span id="icon-call" class="material-icons">call</span>
     </div>
 </body>
+
 </html>
