@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS3 Transisitions</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <style>
         h1{
             color: red;
@@ -19,8 +21,7 @@
 
         .box{
             float: left;
-            margin-left: 10px;
-            margin-right: 10px;
+            margin: 10px;
             width: 250px;
             height: 250px;
             background-color: yellow;
@@ -60,6 +61,28 @@
         #box3{
             background-image: url('image/3.jpg');
         }
+
+        #btn-call{
+            position: relative;
+            background-color:rgb(0 173 255 / 87%);
+            width: 84px;
+            height: 84px;
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            border-radius: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #icon-call{
+            position: absolute;
+            font-size: 3.2rem;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotateY(180deg);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +91,9 @@
         <div id="box1" class="box"></div>
         <div id="box2" class="box"></div>
         <div id="box3" class="box"></div>
+    </div>
+    <div id="btn-call">
+        <span id="icon-call" class="material-icons">call</span>
     </div>
 </body>
 </html>
