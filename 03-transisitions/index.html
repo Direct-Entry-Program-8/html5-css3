@@ -67,7 +67,7 @@
             width: 84px;
             height: 84px;
             position: fixed;
-            bottom: 100px;
+            bottom: 50px;
             right: 100px;
             border-radius: 100%;
             text-align: center;
@@ -93,8 +93,8 @@
             left: 0;
             right: 0;
             width: 100%;
-            height: 100%;
             background-color: rgb(0, 255, 21);
+            height: 100%;
             opacity: 0.2;
             border-radius: 100%;
             z-index: -1;
@@ -120,6 +120,90 @@
             color: white;
             transition: transform 250ms ease-in-out;
         }
+
+        #video-wrapper{
+            position: relative;
+            float: left;
+            width: 400px;
+            height: 400px;
+            background-image: url(image/thumbnail.jpg);
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        #video-wrapper:hover::before{
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+
+        #video-wrapper:hover #icon-play{
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        #icon-play{
+            position: absolute;
+            font-size: 12rem;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 250ms ease-out;
+            z-index: 9999;
+            color: #ffffffd4;
+        }
+
+        #video-wrapper::after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: white;
+            opacity: 0.5;
+        }
+
+        #video-wrapper::before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            top: 50%;
+            border-radius: 100%;
+            border: 4px dotted white;
+            transform: translate(-50%, -50%);
+            transition-property: transform;
+            transition-duration: 350ms;
+            transition-timing-function: linear;
+            z-index: 9999;
+        }
+
+        #youtube{
+            display: none;
+        }
+
+        #video-wrapper:focus #youtube{
+            display: block;
+        }
+
+        #hack{
+            visibility: hidden;;
+        }
+
+        #wrapper:focus #video-wrapper::before,
+        #wrapper:focus #video-wrapper::after,
+        #wrapper:focus #icon-play{
+            display: none;
+        }
+
+        #wrapper:focus #youtube{
+            display: block;
+        }
+
+        #youtube{
+            display: none;
+        }
     </style>
 </head>
 
@@ -130,6 +214,12 @@
         <div id="box2" class="box"></div>
         <div id="box3" class="box"></div>
     </div>
+    <a id="wrapper" href="#">
+        <div id="video-wrapper">
+            <iframe id="youtube" width="400" height="400" src="https://www.youtube.com/embed/PnSCCe8czFE?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span id="icon-play" class="material-icons">play_arrow</span>
+        </div>
+    </a>
     <div id="btn-call">
         <span id="icon-call" class="material-icons">call</span>
     </div>
