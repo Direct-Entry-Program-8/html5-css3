@@ -235,13 +235,14 @@
             position: relative;
             margin-top: 100vh;
             margin-bottom: 50px;
-            background-color: #6089ff14;
             height: 500px;
             width: 100%;
+            overflow: hidden;
+
+            background-color: #6089ff14;
             border-top: 1px solid lightgray;
             border-bottom: 1px solid lightgray;
             padding: 10px 0;
-            overflow: hidden;
             box-shadow: 0 0 16px 3px #0000004a;
         }
 
@@ -254,7 +255,7 @@
 
             animation-name: slide;
             animation-iteration-count: infinite;
-            animation-duration: 10s;
+            animation-duration: 7s;
             animation-timing-function: linear;
         }
 
@@ -274,10 +275,12 @@
             content: "";
             display: block;
             clear: right;
-            height: 35%;
+            height: 30%;
             width: 100%;
             top: 100%;
-            background: linear-gradient(180deg, transparent, #ffffff);
+            background-color: red;
+            opacity: 0.5;
+            background: linear-gradient(0deg, #ffffff, #ff030300);
             z-index: 2;
         }
 
@@ -320,29 +323,29 @@
 
         @keyframes slide {
 
-            90%,
-            0% {
+            0%,
+            10% {
                 transform: translateX(0);
             }
 
-            10%,
-            20% {
-                transform: translateX(-19%);
+            20%,
+            30% {
+                transform: translateX(-18.5%);
             }
 
-            30%,
-            40% {
-                transform: translateX(calc(-19% * 2));
+            40%,
+            50% {
+                transform: translateX(calc(-18.5% * 2));
             }
 
-            50%,
-            60% {
-                transform: translateX(calc(-19% * 3));
+            60%,
+            70% {
+                transform: translateX(calc(-18.5% * 3));
             }
 
-            70%,
-            80% {
-                transform: translateX(calc(-19% * 4));
+            80%,
+            90% {
+                transform: translateX(calc(-18.5% * 4));
             }
         }
     </style>
