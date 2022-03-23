@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS3 Animations</title>
     <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
         h1 {
             position: absolute;
             top: 30px;
@@ -47,8 +53,8 @@
 
         img {
             position: absolute;
+            top: 100px;
             width: 150px;
-            margin-top: 100px;
 
             animation-name: walking-man;
             animation-duration: 3s;
@@ -90,7 +96,7 @@
             transform: translate(-50%, -50%);
         }
 
-        #bird::before{
+        #bird::before {
             position: absolute;
             content: "";
             display: block;
@@ -113,7 +119,7 @@
             overflow: hidden;
         }
 
-        .eye::before{
+        .eye::before {
             content: "";
             display: block;
             position: absolute;
@@ -129,18 +135,18 @@
             left: 15px;
         }
 
-        #right-eye::before{
+        #right-eye::before {
             animation-name: right-blink;
             animation-timing-function: ease-in;
             animation-duration: 2s;
             animation-iteration-count: infinite;
-        }        
+        }
 
         #left-eye {
             right: 15px;
         }
 
-        #left-eye::before{
+        #left-eye::before {
             animation-name: left-blink;
             animation-timing-function: ease-in;
             animation-duration: 2s;
@@ -193,37 +199,150 @@
             box-shadow: inset 0 0 13px rgb(0 0 0 / 30%);
         }
 
-        #right-feather{
+        #right-feather {
             right: 3px;
         }
 
-        #left-feather{
+        #left-feather {
             left: 3px;
         }
 
-        @keyframes right-blink
-         {
-            from{
+        @keyframes right-blink {
+            from {
                 left: 0;
                 top: 0;
             }
 
-            50%{
+            50% {
                 left: 7px;
                 top: 24px;
             }
         }
 
-        @keyframes left-blink
-         {
-            from{
+        @keyframes left-blink {
+            from {
                 right: 0;
                 top: 0;
             }
 
-            50%{
+            50% {
                 right: 15px;
                 top: 24px;
+            }
+        }
+
+        #slider-wrapper {
+            position: relative;
+            margin-top: 100vh;
+            margin-bottom: 50px;
+            background-color: #6089ff14;
+            height: 500px;
+            width: 100%;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            padding: 10px 0;
+            overflow: hidden;
+            box-shadow: 0 0 16px 3px #0000004a;
+        }
+
+        #slider {
+            position: relative;
+            width: calc(70vw * 5 + 100px * 5);
+            height: 500px;
+            overflow-y: hidden;
+            padding: 0 100px;
+
+            animation-name: slide;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+        }
+
+        .slide {
+            position: relative;
+            box-sizing: border-box;
+            width: 70vw;
+            height: 80%;
+            background-size: cover;
+            float: left;
+            margin: 0 50px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .slide::before {
+            position: absolute;
+            content: "";
+            display: block;
+            clear: right;
+            height: 35%;
+            width: 100%;
+            top: 100%;
+            background: linear-gradient(180deg, transparent, #ffffff);
+            z-index: 2;
+        }
+
+        .slide::after {
+            position: absolute;
+            content: "";
+            display: block;
+            clear: right;
+            height: 100%;
+            width: 100%;
+            top: 100%;
+            background-size: cover;
+            transform: rotateX(180deg);
+        }
+
+        .slide:first-child,
+        .slide:first-child::after {
+            background-image: url(image/1.jpg);
+        }
+
+        .slide:nth-child(2),
+        .slide:nth-child(2)::after {
+            background-image: url(image/2.jpg);
+        }
+
+        .slide:nth-child(3),
+        .slide:nth-child(3)::after {
+            background-image: url(image/3.jpg);
+        }
+
+        .slide:nth-child(4),
+        .slide:nth-child(4)::after {
+            background-image: url(image/4.jpg);
+        }
+
+        .slide:last-child,
+        .slide:last-child::after {
+            background-image: url(image/5.jpg);
+        }
+
+        @keyframes slide {
+
+            90%,
+            0% {
+                transform: translateX(0);
+            }
+
+            10%,
+            20% {
+                transform: translateX(-19%);
+            }
+
+            30%,
+            40% {
+                transform: translateX(calc(-19% * 2));
+            }
+
+            50%,
+            60% {
+                transform: translateX(calc(-19% * 3));
+            }
+
+            70%,
+            80% {
+                transform: translateX(calc(-19% * 4));
             }
         }
     </style>
@@ -244,6 +363,15 @@
         <div id="left-leg" class="leg"></div>
         <div id="right-feather" class="feather"></div>
         <div id="left-feather" class="feather"></div>
+    </div>
+    <div id="slider-wrapper">
+        <div id="slider">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
     </div>
 </body>
 
