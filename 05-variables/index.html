@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Variables</title>
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="node_modules/reset.css/reset.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page Style Sheet -->
+    <link rel="stylesheet" href="css/page/home.css">
+
+    <!-- Icon-Pack (JS) -->
+    <script src="https://kit.fontawesome.com/08ab8f26ae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Manage Customer Form</h1>
+    <form action="">
+        <div class="form-group">
+            <label for="txt-id">ID</label>
+            <input id="txt-id" type="text" placeholder="Enter Customer ID">
+        </div>
+        <div class="form-group">
+            <label for="txt-name">Name</label>
+            <input id="txt-name" type="text" placeholder="Enter Customer Name">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <input id="rdo-male" type="radio"> <label for="rdo-male">Male</label>
+            <input id="rdo-female" type="radio"> <label for="rdo-female">Female</label>
+        </div> 
+        <div class="form-group">
+            <button class="primary">Save Customer</button>
+        </div>       
+    </form>
+</body>
+</html>

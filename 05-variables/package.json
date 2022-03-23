@@ -1,0 +1,9 @@
+{
+  "name": "css3-variables-and-html-form",
+  "version": "1.0.0",
+  "author": "suranga <suranga@ijse.lk>",
+  "license": "MIT",
+  "dependencies": {
+    "reset.css": "^2.0.2"
+  }
+}

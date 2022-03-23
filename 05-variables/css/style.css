@@ -1,0 +1,83 @@
+/* Copyright © 2022 DEP8. All Rights Reserved.
+ *
+ * style.css
+ * 
+ * Author: suranga <suranga@ijse.lk>
+ */
+
+/* == Base Styles | Utitlies */
+
+:root{
+    --border-color: lightgray;
+    --focus-color: rgb(25, 198, 255);
+    --primary: rgb(25, 117, 255);
+    --primary-hover: rgb(84 151 255);
+    --text-color: white;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    padding: 10px;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+.form-group{
+    padding: 10px;
+}
+
+.form-group > label{
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-group > input:not([type="radio"]) {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group > input:not([type="radio"]):focus{
+    border-color: var(--focus-color);
+    outline: none;
+}
+
+button{
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.primary{
+    background-color: var(--primary);
+    color: var(--text-color);
+}
+
+button.primary:hover{
+    background-color: var(--primary-hover);
+}
+
+/* == Site-Wide | Layouts */
+
+/* == Keyframes */
+
+/* == Media Queries */
