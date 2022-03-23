@@ -12,7 +12,10 @@
     --focus-color: rgb(25, 198, 255);
     --primary: rgb(25, 117, 255);
     --primary-hover: rgb(84 151 255);
-    --text-color: white;
+    --primary-text-color: white;
+    --warning: rgb(255, 205, 113);
+    --warning-text-color: black;
+    --warning-hover: rgb(255, 221, 157);
 }
 
 *{
@@ -65,15 +68,25 @@ button{
     border: 1px solid;
     border-radius: 5px;
     cursor: pointer;
+    border-color: white;
 }
 
 button.primary{
     background-color: var(--primary);
-    color: var(--text-color);
+    color: var(--primary-text-color);
 }
 
 button.primary:hover{
     background-color: var(--primary-hover);
+}
+
+button.warning{
+    background-color: var(--warning);
+    color: var(--warning-text-color);
+}
+
+button.warning:hover{
+    background-color: var(--warning-hover);
 }
 
 /* == Site-Wide | Layouts */
