@@ -25,19 +25,19 @@
 </head>
 <body>
     <h1>Manage Customer Form</h1>
-    <form action="">
+    <form action="kaleyanna" method="POST" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
             <label for="txt-id">ID</label>
-            <input id="txt-id" type="text" placeholder="Enter Customer ID">
+            <input id="txt-id" type="text" placeholder="Enter Customer ID" name="id">
         </div>
         <div class="form-group">
             <label for="txt-name">Name</label>
-            <input id="txt-name" type="text" placeholder="Enter Customer Name">
+            <input id="txt-name" type="text" placeholder="Enter Customer Name" name="name">
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <input id="rdo-male" type="radio"> <label for="rdo-male">Male</label>
-            <input id="rdo-female" type="radio"> <label for="rdo-female">Female</label>
+            <input id="rdo-male" type="radio" name="gender" value="male"> <label for="rdo-male">Male</label>
+            <input id="rdo-female" type="radio" name="gender" value="female"> <label for="rdo-female">Female</label>
         </div> 
         <div class="form-group">
             <button class="primary">Save Customer</button>
